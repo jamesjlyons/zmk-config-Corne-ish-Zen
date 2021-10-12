@@ -31,9 +31,9 @@
                 numrow_layer {
                         label = "NUMROW";
                         bindings = <
-   &kp TAB    &kp N1   &kp N2    &kp N3   &kp N4   &kp N5     &kp N6    &kp N7    &kp N8   &kp N9   &kp N0   &kp BSPC
-   &kp LCTRL  &kp LBRC &kp RBRC  &kp LPAR &kp RPAR &none      &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT  &none    &none     &kp LBKT &kp RBKT &none      &kp UNDER &kp PLUS  &kp LBRC &kp RBRC &kp PIPE &kp TILDE
+   &trans  &kp N1   &kp N2    &kp N3   &kp N4   &kp N5     &kp N6    &kp N7    &kp N8   &kp N9   &kp N0   &kp BSPC
+   &trans  &kp LBRC &kp RBRC  &kp LPAR &kp RPAR &none      &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &kp BSLH &kp GRAVE
+   &trans  &none    &none     &kp LBKT &kp RBKT &none      &kp UNDER &kp PLUS  &kp LBRC &kp RBRC &kp PIPE &kp TILDE
                                     &trans &trans &trans      &trans &mo ADJUST &mo COLEMAK
                         >;
                 };
@@ -41,9 +41,9 @@
                 adjust_layer {
                         label = "ADJUST";
                         bindings = <
-   &kp F1      &kp F2  &kp F3   &kp F4    &kp F5 &kp F6    &kp F7   &kp F8   &kp F9 &kp F10   &kp F11 &kp F12
-   &kp CAPS    &kp INS &kp HOME &kp PG_UP &none  &none     &kp LEFT &kp DOWN &kp UP &kp RIGHT &none   &none
-   &tog NUMPAD &kp DEL &kp END  &kp PG_DN &none  &none     &none    &none    &none  &none     &none   &none
+   &trans  &kp F2  &kp F3   &kp F4    &kp F5 &kp F6    &kp F7   &kp F8   &kp F9 &kp F10   &kp F11 &kp F12
+   &trans  &kp INS &kp HOME &kp PG_UP &none  &none     &kp LEFT &kp DOWN &kp UP &kp RIGHT &none   &none
+   &trans  &kp DEL &kp END  &kp PG_DN &none  &none     &none    &none    &none  &none     &none   &none
                                   &trans &trans &trans     &trans &mo CONFIG &mo ADJUST
                         >;
                 };
@@ -51,9 +51,9 @@
                 config_layer {
                         label = "CONFIG";
                         bindings = <
-   &reset     &none        &none        &none        &none        &none           &none &none &none &none &none &none 
+   &trans     &none        &none        &none        &none        &none           &none &none &none &none &none &none 
    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4    &none &none &none &none &none &none
-   &none      &none        &none        &none        &none        &none           &none &none &none &none &none &none
+   &trans      &none        &none        &none        &none        &none           &none &none &none &none &none &none
                                                           &trans &trans &trans    &trans &none &mo ADJUST
                         >;
                 };
