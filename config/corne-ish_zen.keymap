@@ -17,16 +17,28 @@
 #define HYPER LS(LC(LA(LGUI)))
 
 / {     
+        behaviors {
+                hm: homerow_mods {
+                compatible = "zmk,behavior-hold-tap";
+                label = "HOMEROW_MODS";
+                #binding-cells = <2>;
+                tapping-term-ms = <150>;
+                quick_tap_ms = <0>;
+                flavor = "tap-preferred";
+                bindings = <&kp>, <&kp>;
+                };
+        };
+
         keymap {
                 compatible = "zmk,keymap";
 
                 default_layer {
                         label = "BASE";
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp F &kp P &kp B    &kp J &kp L &kp U    &kp Y   &kp SEMI &kp ESC
-   &mt HYPER BKSP  &kp A &kp R &kp S &kp T &kp G    &kp M &kp N &kp E    &kp I   &kp O    &kp QUOT
-   &mt LSHFT ESC &kp Z &kp X &kp C &kp D &kp V    &kp K &kp H &kp CMMA &kp DOT &kp FSLH &kp RCTRL
-                 &kp LALT &kp LGUI &kp SPC    &kp ENTER &mo 1 &to 2
+   &kp TAB        &kp Q       &kp W       &kp F        &kp P         &kp B       &kp J &kp L        &kp U       &kp Y      &kp SEMI   &kp ESC
+   &mt HYPER BKSP &hm LGUI A  &hm LALT R  &hm LCTRL S  &hm LSHIFT T  &kp G       &kp M &hm LSHIFT N &hm LCTRL E &hm LALT I &hm LGUI O &kp QUOT
+   &mt LSHFT ESC  &kp Z       &kp X       &kp C        &kp D         &kp V       &kp K &kp H        &kp CMMA    &kp DOT    &kp FSLH   &kp RCTRL
+                                                   &kp LALT &kp LGUI &kp SPC   &kp ENTER &mo 1 &to 2
                         >;
                 };
 
