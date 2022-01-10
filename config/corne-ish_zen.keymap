@@ -27,6 +27,15 @@
                 flavor = "tap-preferred";
                 bindings = <&kp>, <&kp>;
                 };
+                sm: space_mod {
+                compatible = "zmk,behavior-hold-tap";
+                label = "SPACE_MOD";
+                #binding-cells = <2>;
+                tapping-term-ms = <250>;
+                quick_tap_ms = <0>;
+                flavor = "tap-unless-interrupted";
+                bindings = <&kp>, <&kp>;
+                };
         };
 
         keymap {
@@ -38,7 +47,7 @@
    &kp TAB        &kp Q       &kp W       &kp F        &kp P         &kp B              &kp J &kp L        &kp U       &kp Y      &kp SEMI   &kp ESC
    &mt HYPER BKSP &hm LGUI A  &hm LALT R  &hm LCTRL S  &hm LSHIFT T  &kp G              &kp M &hm LSHIFT N &hm LCTRL E &hm LALT I &hm LGUI O &kp QUOT
    &mt LSHFT ESC  &kp Z       &kp X       &kp C        &kp D         &kp V              &kp K &kp H        &kp CMMA    &kp DOT    &kp FSLH   &kp RCTRL
-                                          &kp LALT &kp LGUI &mt LSHFT SPACE             &mt RSHFT ENTER &mo 1 &to 2
+                                          &kp LALT &kp LGUI &sm LSHFT SPACE             &mt RSHFT ENTER &mo 1 &to 2
                         >;
                 };
 
