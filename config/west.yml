@@ -4,7 +4,6 @@ manifest:
       url-base: https://github.com/manna-harbour
   projects:
     - name: zmk
-      branch: zen
       remote: zmkfirmware
       revision: Board-Corne-ish-Zen-dedicated-work-queue
       import: app/west.yml
