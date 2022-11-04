@@ -1,0 +1,11 @@
+name: "Build corne-ish_zen"
+on: workflow_dispatch
+jobs:
+  build:
+    uses: ./.github/workflows/main.yml
+    secrets: inherit
+    with:
+      board: '["corne-ish_zen"]'
+      custom_config: '["#define MIRYOKU_KLUDGE_MOUSEKEYSPR"]'
+      kconfig: '["CONFIG_ZMK_MOUSE=n\nCONFIG_ZMK_DISPLAY_HIDE_MOMENTARY_LAYERS=y\nCONFIG_CUSTOM_WIDGET_LOGO_IMAGE_MIRYOKU=n\nCONFIG_IL0323_INVERT=y"]'
+      branches: '["manna-harbour/zmk/zen zmkfirmware/zmk/main ftc/zmk/mouse-ftc"]'
