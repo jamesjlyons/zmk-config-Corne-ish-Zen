@@ -14,7 +14,7 @@
 #define ADJUST 2
 #define CONFIG 3
 
-#define HYPER LS(LC(LA(LGUI)))
+#define HYPER LC(LA(LGUI))
 
 / {     
         behaviors {
