@@ -14,9 +14,9 @@
 #define ADJUST 2
 #define CONFIG 3
 
-#define HYPER LC(LA(LGUI))
+#define NS_HYPER LC(LA(LGUI))
 
-/ {     
+/ {
         behaviors {
                 hm: homerow_mods {
                 compatible = "zmk,behavior-hold-tap";
@@ -50,7 +50,7 @@
                 tapping-term-ms = <200>;
                 bindings = <&mo 1>, <&to 2>, <&to 3>;
                 };
-        };   
+        };
 
         keymap {
                 compatible = "zmk,keymap";
@@ -59,9 +59,9 @@
                         label = "BASE";
                         bindings = <
    &kp TAB        &kp Q       &kp W       &kp F        &kp P         &kp B              &kp J &kp L        &kp U       &kp Y      &kp SEMI   &kp BSLH
-   &mt HYPER BKSP &kp A       &kp R       &kp S        &kp T         &kp G              &kp M &kp N        &kp E       &kp I      &kp O      &kp QUOT
+   &mt NS_HYPER BKSP &kp A       &kp R       &kp S        &kp T         &kp G              &kp M &kp N        &kp E       &kp I      &kp O      &kp QUOT
    &mt LSHFT ESC  &kp Z       &kp X       &kp C        &kp D         &kp V              &kp K &kp H        &kp CMMA    &kp DOT    &kp FSLH   &kp RSHFT
-                                          &kp LALT &kp LGUI &kp SPACE             &kp ENTER &td1 &td0 
+                                          &kp LALT &kp LGUI &kp SPACE             &kp ENTER &td1 &td0
                         >;
                 };
 
@@ -88,7 +88,7 @@
                 config_layer {
                         label = "CONFIG";
                         bindings = <
-   &trans     &none        &none        &none        &none        &none           &none &none &none &none &none &none 
+   &trans     &none        &none        &none        &none        &none           &none &none &none &none &none &none
    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4    &none &none &none &none &none &none
    &trans      &none        &none        &none        &none        &none           &none &none &none &none &none &none
                                                           &trans &trans &trans    &trans &trans &trans
