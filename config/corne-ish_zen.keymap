@@ -15,6 +15,7 @@
 #define CONFIG 3
 
 #define NS_HYPER LC(LA(LGUI))
+#define GLOBE C_AC_NEXT_KEYBOARD_LAYOUT_SELECT
 
 / {
         behaviors {
@@ -50,6 +51,21 @@
                 tapping-term-ms = <200>;
                 bindings = <&mo 1>, <&to 2>, <&to 3>;
                 };
+                shift_esc: shift_esc {
+                compatible = "zmk,behavior-hold-tap";
+                label = "SHIFT_ESC";
+                #binding-cells = <2>;
+                tapping-term-ms = <200>;
+                flavor = "tap-preferred";
+                bindings = <&kp>, <&kp>;
+                };
+                td_shift_esc_globe: tap_dance_shift_esc_globe {
+                compatible = "zmk,behavior-tap-dance";
+                label = "TAP_DANCE_SHIFT_ESC_GLOBE";
+                #binding-cells = <0>;
+                tapping-term-ms = <200>;
+                bindings = <&shift_esc LSHFT ESC>, <&kp GLOBE>;
+                };
         };
 
         keymap {
@@ -60,7 +76,7 @@
                         bindings = <
    &kp TAB        &kp Q       &kp W       &kp F        &kp P         &kp B              &kp J &kp L        &kp U       &kp Y      &kp SEMI   &kp BSLH
    &mt NS_HYPER BKSP &kp A       &kp R       &kp S        &kp T         &kp G              &kp M &kp N        &kp E       &kp I      &kp O      &kp QUOT
-   &mt LSHFT ESC  &kp Z       &kp X       &kp C        &kp D         &kp V              &kp K &kp H        &kp CMMA    &kp DOT    &kp FSLH   &kp RSHFT
+   &td_shift_esc_globe  &kp Z       &kp X       &kp C        &kp D         &kp V              &kp K &kp H        &kp CMMA    &kp DOT    &kp FSLH   &kp RSHFT
                                           &kp LALT &kp LGUI &kp SPACE             &kp ENTER &td1 &td0
                         >;
                 };
